@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    margin: 10;
+    /* background: linear-gradient(to bottom right, #ffcccc, #ffe6e6); */
+    background: linear-gradient(135deg,#153677,#4e085f);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+
+    
+}
+
+.new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: 10px; /* 10px margin from the top */
+}
+    
+
+.container {
+   
+    margin-top: 120px; 
+    position: relative;
+    width: 195px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-image: url('Gmail-Logo-2013-2020.png'); /* Add the image as background */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.open-btn {
+    position: absolute;
+    bottom: -50px;
+    padding: 10px 20px;
+    background-color: #ff6666;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    color: rgb(250, 193, 87);
+    border: 1px rgb(120, 79, 79) solid;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow:0 4px 6px rgba(50, 43, 43, 0.2);
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.open-btn:hover {
+    color: #c16565;
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-color: #F72C5B;
+    transform: rotate(-45deg) scale(0);
+    top: 80px;
+    left: 210px; /* Adjusts the heart's position beside the container */
+    animation: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #F72C5B;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.heart.animate {
+    animation: bounceOut 2.5s ease forwards;
+}
+
+#message-box {
+    display: none;
+    position: absolute;
+    top: 150px;
+    background-color: rgb(16, 103, 173);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+    color: wheat;
+    animation: fadeIn 0.5s ease;
+    /* animation: fadeOut 1s ease; */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        transform: rotate(-45deg) scale(0);
+        top: 80px;
+    }
+    50% {
+        transform: rotate(-45deg) scale(1.2);
+        top: -20px;
+    }
+    100% {
+        transform: rotate(-45deg) scale(1);
+        top: 0;
+    }
+}
